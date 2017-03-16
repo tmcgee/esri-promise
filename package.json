@@ -1,0 +1,27 @@
+{
+  "name": "esri-promise",
+  "version": "0.1.0",
+  "description": "Ultra-thin Promise wrapper for the ArcGIS JS API loader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicksenger/esri-promise.git"
+  },
+  "keywords": [
+    "ArcGIS",
+    "Esri",
+    "promise"
+  ],
+  "author": "Nick Senger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicksenger/esri-promise/issues"
+  },
+  "homepage": "https://github.com/nicksenger/esri-promise#readme",
+  "dependencies": {
+    "es6-promise": "^4.1.0"
+  }
+}
