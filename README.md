@@ -17,7 +17,7 @@ By default, esri-promise will use version 4.x of the ArcGIS API for JavaScript:
 import { esriPromise } from 'esri-promise';
 
 esriPromise([
-    'esri/map',
+    'esri/Map',
     'esri/views/MapView'
 ]).then(([Map, MapView]) => { // Modules come back as an array, so array destructuring is convenient here.
     // Make a map with the Map and MapView modules from the API.
