@@ -1,4 +1,5 @@
 "use strict";
+exports.__esModule = true;
 var es6_promise_1 = require("es6-promise");
 function isLoaded() {
     return typeof window['require'] !== 'undefined';
@@ -6,7 +7,7 @@ function isLoaded() {
 function dojoPromise(modules) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         // If something goes wrong loading the esri/dojo scripts, reject with the error.
-        window['require'].on("error", reject);
+        window['require'].on('error', reject);
         window['require'](modules, function () {
             var args = [];
             for (var _i = 0; _i < arguments.length; _i++) {
@@ -17,7 +18,7 @@ function dojoPromise(modules) {
         });
     });
 }
-function esriBootstrap(url) {
+function esriBootstrap(url, dojoConfig) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (isLoaded()) {
             // If the API is already loaded, reject with an error message.
@@ -25,6 +26,9 @@ function esriBootstrap(url) {
         }
         if (!url) {
             url = 'https://js.arcgis.com/4.3/';
+        }
+        if (dojoConfig) {
+            window['dojoConfig'] = dojoConfig;
         }
         var script = document.createElement('script');
         script.type = 'text/javascript';
@@ -48,4 +52,4 @@ function esriPromise(modules) {
     }
 }
 exports.esriPromise = esriPromise;
-//# sourceMappingURL=index.js.map
+exports["default"] = esriPromise;
