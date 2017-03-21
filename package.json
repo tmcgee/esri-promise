@@ -4,7 +4,8 @@
   "description": "Ultra-thin Promise wrapper for the ArcGIS JS API loader",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config ./webpack.config.js",
+    "start": "webpack-dev-server --hot"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,13 @@
   "homepage": "https://github.com/nicksenger/esri-promise#readme",
   "dependencies": {
     "es6-promise": "^4.1.0"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.1.2",
+    "html-webpack-plugin": "^2.28.0",
+    "source-map-loader": "^0.2.0",
+    "typescript": "^2.2.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2"
   }
 }
