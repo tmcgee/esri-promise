@@ -9,9 +9,40 @@ This was completely inspired by and modeled after Tom Wayson's very useful libra
 npm install esri-promise
 ```
 
+## New in 0.2.x!
+
+Now in version 0.2.x, you can pass dojo configuration parameters into `esriBootstrap` like so:
+
+```js
+import esriPromise, { esriBootstrap } from 'esri-promise';
+
+const package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+
+esriBootstrap('https://js.arcgis.com/4.3/', {
+  async: true,
+  packages: [
+    {
+      location: package_path + '/config',
+      name: 'config'
+    }
+  ]
+}).then(() => {
+    esriPromise([
+        'dojo/text!config/test.json'
+    ]).then(([
+        result
+    ]) => {
+        console.log(result);
+    });
+});
+
+```
+
+This helps you use dojo plugins like text and i18n in conjunction with esri-promise.
+
 ## Use
 
-By default, esri-promise will use version 4.x of the ArcGIS API for JavaScript:
+By default, esri-promise will use version 4.3 of the ArcGIS API for JavaScript (*or whatever version has already been loaded through esriBootstrap('url')*):
 
 ```js
 import { esriPromise } from 'esri-promise';
