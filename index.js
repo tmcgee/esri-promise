@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var es6_promise_1 = require("es6-promise");
 function isLoaded() {
     return typeof window['require'] !== 'undefined';
@@ -25,7 +25,7 @@ function esriBootstrap(url, dojoConfig) {
             reject('The ArcGIS API for JavaScript has already been loaded!');
         }
         if (!url) {
-            url = 'https://js.arcgis.com/4.3/';
+            url = 'https://js.arcgis.com/4.4/';
         }
         if (dojoConfig) {
             window['dojoConfig'] = dojoConfig;
@@ -52,4 +52,5 @@ function esriPromise(modules) {
     }
 }
 exports.esriPromise = esriPromise;
-exports["default"] = esriPromise;
+exports.default = esriPromise;
+//# sourceMappingURL=index.js.map
