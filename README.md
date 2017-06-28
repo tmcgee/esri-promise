@@ -9,6 +9,10 @@ This was completely inspired by and modeled after Tom Wayson's very useful libra
 npm install esri-promise
 ```
 
+## New in 0.3.x:
+
+Esri-promise will now use version 4.4 of the ArcGIS JS API by default.
+
 ## New in 0.2.x!
 
 Now in version 0.2.x, you can pass dojo configuration parameters into `esriBootstrap` like so:
@@ -42,7 +46,7 @@ This helps you use dojo plugins like text and i18n in conjunction with esri-prom
 
 ## Use
 
-By default, esri-promise will use version 4.3 of the ArcGIS API for JavaScript (*or whatever version has already been loaded through esriBootstrap('url')*):
+By default, esri-promise will use version 4.4 of the ArcGIS API for JavaScript (*or whatever version has already been loaded through esriBootstrap('url')*):
 
 ```js
 import { esriPromise } from 'esri-promise';
