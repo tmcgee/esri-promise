@@ -23,7 +23,7 @@ export function esriBootstrap(url?: string, dojoConfig?: { [propName: string]: a
         }
 
         if (!url) {
-            url = 'https://js.arcgis.com/4.4/';
+            url = 'https://js.arcgis.com/4.5/';
         }
 
         if (dojoConfig) {

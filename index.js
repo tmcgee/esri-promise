@@ -25,7 +25,7 @@ function esriBootstrap(url, dojoConfig) {
             reject('The ArcGIS API for JavaScript has already been loaded!');
         }
         if (!url) {
-            url = 'https://js.arcgis.com/4.4/';
+            url = 'https://js.arcgis.com/4.5/';
         }
         if (dojoConfig) {
             window['dojoConfig'] = dojoConfig;
