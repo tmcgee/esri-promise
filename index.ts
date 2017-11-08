@@ -7,8 +7,12 @@ function isLoaded(): boolean {
 function dojoPromise(modules: string[]): Promise<any> {
     return new Promise((resolve, reject) => {
         // If something goes wrong loading the esri/dojo scripts, reject with the error.
-        window['require'].on('error', reject);
+        const handle = window['require'].on('error', (err: Error) => {
+            handle.remove();
+            reject(err);
+        });
         window['require'](modules, (...args: any[]) => {
+            handle.remove();
             // Resolve with the parameters from dojo require as an array.
             resolve(args);
         });
