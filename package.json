@@ -1,6 +1,6 @@
 {
   "name": "esri-promise",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "ES6 promise wrapper for the ArcGIS JS API loader",
   "main": "index.js",
   "scripts": {
