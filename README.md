@@ -11,9 +11,9 @@ npm install esri-promise
 
 ## New in 0.3.x:
 
-Esri-promise will now use version 4.4 of the ArcGIS JS API by default.
+Esri-promise will now use version 4.5 of the ArcGIS JS API by default.
 
-## New in 0.2.x!
+## New in 0.2.x:
 
 Now in version 0.2.x, you can pass dojo configuration parameters into `esriBootstrap` like so:
 
