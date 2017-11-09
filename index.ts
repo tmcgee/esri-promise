@@ -1,7 +1,8 @@
 import { Promise } from 'es6-promise';
 
 function isLoaded(): boolean {
-    return typeof window['require'] !== 'undefined';
+    // Make sure there is a global require and that it is dojo's
+    return !!window['require'] && !!window['require'].on;
 }
 
 function dojoPromise(modules: string[]): Promise<any> {
