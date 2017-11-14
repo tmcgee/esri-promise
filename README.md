@@ -1,5 +1,5 @@
 # esri-promise
-Very lightweight promise wrapper for asynchronous loading of [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) modules.
+Lightweight promise wrapper for asynchronous loading of [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) modules.
 
 This was completely inspired by and modeled after Tom Wayson's very useful library [esri-loader](https://www.npmjs.com/package/esri-loader). See his blog post on why this sort of thing could be useful [here](http://tomwayson.com/2016/11/27/using-the-arcgis-api-for-javascript-in-applications-built-with-webpack/).
 
@@ -8,6 +8,14 @@ This was completely inspired by and modeled after Tom Wayson's very useful libra
 ```bash
 npm install esri-promise
 ```
+
+## New in 0.4.x:
+
+- Esri-promise no longer depends on the `es6-promise` polyfill. You will have to include the `Promise` constructor in your application at runtime to achieve compatibility with browsers that don't natively support es6 promises.
+
+- Esri-promise will warn you if the ArcGIS API for JavaScript is going to overwrite an existing global `require` in your project. It will *not prevent it from doing so* however, because the ArcGIS API for JavaScript depends on dojo's loader.
+
+- Added unit tests and switched it to use async/await under the hood. This has no bearing on the public API whatsoever.
 
 ## New in 0.3.x:
 
@@ -46,7 +54,7 @@ This helps you use dojo plugins like text and i18n in conjunction with esri-prom
 
 ## Use
 
-By default, esri-promise will use version 4.4 of the ArcGIS API for JavaScript (*or whatever version has already been loaded through esriBootstrap('url')*):
+By default, esri-promise will use version 4.5 of the ArcGIS API for JavaScript (*or whatever version has already been loaded through `esriBootstrap('url')`*):
 
 ```js
 import { esriPromise } from 'esri-promise';
@@ -54,7 +62,7 @@ import { esriPromise } from 'esri-promise';
 esriPromise([
     'esri/Map',
     'esri/views/MapView'
-]).then(([Map, MapView]) => { // Modules come back as an array, so array destructuring is convenient here.
+]).then(([ Map, MapView ]) => { // Modules come back as an array, so array destructuring is convenient here.
     // Make a map with the Map and MapView modules from the API.
 })
 .catch((err) => {
