@@ -2,9 +2,19 @@
   "name": "esri-promise",
   "version": "0.3.5",
   "description": "ES6 promise wrapper for the ArcGIS JS API loader",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "test": "nyc mocha"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   },
   "repository": {
     "type": "git",
@@ -25,8 +35,18 @@
     "es6-promise": "^4.1.1"
   },
   "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/jsdom": "^11.0.4",
+    "@types/mocha": "^2.2.44",
+    "@types/sinon": "^4.0.0",
     "awesome-typescript-loader": "^3.3.0",
+    "chai": "^4.1.2",
+    "jsdom": "^11.3.0",
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
+    "sinon": "^4.1.2",
     "source-map-loader": "^0.2.3",
+    "ts-node": "^3.3.0",
     "typescript": "^2.6.1",
     "webpack": "^2.7.0"
   }

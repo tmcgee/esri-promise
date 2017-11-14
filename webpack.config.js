@@ -3,11 +3,11 @@ const webpack = require('webpack');
 module.exports = {
     entry: {
         index: [
-            './index.ts'
+            './src/index.ts'
         ],
     },
     output: {
-        path: __dirname,
+        path: __dirname + '/dist',
         filename: '[name].js',
         library: 'esri-promise',
         libraryTarget: 'umd',
