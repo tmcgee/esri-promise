@@ -1,5 +1,5 @@
 src
-dist
 tsconfig.json
 tslint.json
-test.html
+.nyc_output
+coverage
