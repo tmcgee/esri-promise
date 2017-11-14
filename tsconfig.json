@@ -1,17 +1,23 @@
 {
-  "compilerOptions": {
-      "outDir": "./dist",
-      "sourceMap": true,
-      "declaration": true,
-      "noImplicitReturns": true,
-      "noImplicitThis": true,
-      "noImplicitAny": true,
-      "strictNullChecks": true,
-      "module": "commonjs",
-      "target": "es5",
-      "suppressImplicitAnyIndexErrors": true
-  },
-  "include": [
-      "./index.ts"
-  ]
+    "compilerOptions": {
+        "outDir": "./dist",
+        "sourceMap": true,
+        "declaration": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "module": "umd",
+        "moduleResolution": "node",
+        "target": "es5",
+        "lib": [
+            "dom",
+            "es5",
+            "es2015.promise"
+        ],
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "include": [
+        "./src/index.ts"
+    ]
 }

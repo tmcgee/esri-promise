@@ -1,157 +1,113 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("es6-promise"));
-	else if(typeof define === 'function' && define.amd)
-		define("esri-promise", ["es6-promise"], factory);
-	else if(typeof exports === 'object')
-		exports["esri-promise"] = factory(require("es6-promise"));
-	else
-		root["esri-promise"] = factory(root["es6-promise"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var es6_promise_1 = __webpack_require__(1);
-function isLoaded() {
-    // Make sure there is a global require and that it is dojo's
-    return !!window['require'] && !!window['require'].on;
-}
-function dojoPromise(modules) {
-    return new es6_promise_1.Promise(function (resolve, reject) {
-        // If something goes wrong loading the esri/dojo scripts, reject with the error.
-        var handle = window['require'].on('error', function (err) {
-            handle.remove();
-            reject(err);
-        });
-        window['require'](modules, function () {
-            var args = [];
-            for (var _i = 0; _i < arguments.length; _i++) {
-                args[_i] = arguments[_i];
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
             }
-            handle.remove();
-            // Resolve with the parameters from dojo require as an array.
-            resolve(args);
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports"], factory);
+    }
+})(function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    function isLoaded() {
+        if (!!window['require']) {
+            if (!window['require'].on) {
+                console.warn('A non-dojo AMD loader is already present. This is incompatible with the ArcGIS API for JavaScript. The existing loader will be replaced with the dojo loader.');
+                return false;
+            }
+            return true;
+        }
+        return false;
+    }
+    function dojoPromise(modules) {
+        return new Promise(function (resolve, reject) {
+            var handle = window['require'].on('error', function (err) {
+                handle.remove();
+                reject(err);
+            });
+            window['require'](modules, function () {
+                var args = [];
+                for (var _i = 0; _i < arguments.length; _i++) {
+                    args[_i] = arguments[_i];
+                }
+                handle.remove();
+                resolve(args);
+            });
         });
-    });
-}
-function esriBootstrap(url, dojoConfig) {
-    return new es6_promise_1.Promise(function (resolve, reject) {
-        if (isLoaded()) {
-            reject('The ArcGIS API for JavaScript has already been loaded!');
-        }
-        if (!url) {
-            url = 'https://js.arcgis.com/4.5/';
-        }
-        if (dojoConfig) {
-            window['dojoConfig'] = dojoConfig;
-        }
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = url;
-        script.onload = resolve;
-        script.onerror = reject;
-        document.body.appendChild(script);
-    });
-}
-exports.esriBootstrap = esriBootstrap;
-function esriPromise(modules) {
-    if (!isLoaded()) {
-        return esriBootstrap().then(function () { return dojoPromise(modules); });
     }
-    else {
-        return dojoPromise(modules);
+    function esriBootstrap(url, dojoConfig) {
+        return new Promise(function (resolve, reject) {
+            if (isLoaded()) {
+                reject('The ArcGIS API for JavaScript has already been loaded!');
+            }
+            else {
+                if (!url) {
+                    url = 'https://js.arcgis.com/4.5/';
+                }
+                if (dojoConfig) {
+                    window['dojoConfig'] = dojoConfig;
+                }
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = url;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.body.appendChild(script);
+            }
+        });
     }
-}
-exports.esriPromise = esriPromise;
-exports.default = esriPromise;
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = require("es6-promise");
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(0);
-
-
-/***/ })
-/******/ ]);
+    exports.esriBootstrap = esriBootstrap;
+    function esriPromise(modules) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!!isLoaded()) return [3 /*break*/, 2];
+                        return [4 /*yield*/, esriBootstrap()];
+                    case 1:
+                        _a.sent();
+                        _a.label = 2;
+                    case 2: return [2 /*return*/, dojoPromise(modules)];
+                }
+            });
+        });
+    }
+    exports.esriPromise = esriPromise;
+    exports.default = esriPromise;
 });
 //# sourceMappingURL=index.js.map

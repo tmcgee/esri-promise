@@ -1,5 +1,3 @@
-import { Promise } from 'es6-promise';
-
 function isLoaded(): boolean {
     if (!!window['require']) {
         if (!window['require'].on) {
@@ -47,12 +45,11 @@ export function esriBootstrap(url?: string, dojoConfig?: { [propName: string]: a
     });
 }
 
-export function esriPromise(modules: string[]): Promise<any> {
+export async function esriPromise(modules: string[]): Promise<any> {
     if (!isLoaded()) {
-        return esriBootstrap().then(() => dojoPromise(modules));
-    } else {
-        return dojoPromise(modules);
+        await esriBootstrap();
     }
+    return dojoPromise(modules);
 }
 
 export default esriPromise;

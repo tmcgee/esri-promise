@@ -101,6 +101,33 @@ export default () => (
             });
         });
 
+        describe('it fails to bootstrap the js api', () => {
+            const stub = sinon.stub();
+            beforeEach((done) => {
+                esriPromise(['foobar']).catch(stub);
+                const script = document.querySelector('script');
+                if (script) {
+                    script.onerror('bar' as any);
+                    setTimeout(() => {
+                        done();
+                    }, 10);
+                }
+            });
+
+            it('should bubble the error up to the user', () => {
+                expect(stub.callCount).to.be.above(0);
+            });
+
+            afterEach(() => {
+                const script = document.querySelector('script');
+                if (script) {
+                    document.body.removeChild(script);
+                } else {
+                    throw new Error('The jsapi script was never created!');
+                }
+            });
+        });
+
         describe('an alternate amd loader is being used', () => {
             it('should still bootstrap the js api', () => {
                 window['require'] = {};
