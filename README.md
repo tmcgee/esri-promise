@@ -1,4 +1,7 @@
+![Version 0.4.1](https://img.shields.io/badge/npm-v0.4.1-blue.svg) ![100% Code Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
+
 # esri-promise
+
 Lightweight promise wrapper for asynchronous loading of [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) modules.
 
 This was completely inspired by and modeled after Tom Wayson's very useful library [esri-loader](https://www.npmjs.com/package/esri-loader). See his blog post on why this sort of thing could be useful [here](http://tomwayson.com/2016/11/27/using-the-arcgis-api-for-javascript-in-applications-built-with-webpack/).
