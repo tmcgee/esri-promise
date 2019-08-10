@@ -20,7 +20,7 @@ export default () => (
             it('should set the script src equal to the latest version of jsapi', () => {
                 const script = document.querySelector('script');
                 if (script) {
-                    expect(script.src).to.equal('https://js.arcgis.com/4.5/');
+                    expect(script.src).to.equal('https://js.arcgis.com/4.8/');
                 } else {
                     throw new Error('The jsapi script could not be found!');
                 }
@@ -86,7 +86,7 @@ export default () => (
 
         describe('with a custom dojoConfig specified', () => {
             beforeEach(() => {
-                esriBootstrap('https://js.arcgis.com/4.5/', {
+                esriBootstrap('https://js.arcgis.com/4.8/', {
                     foo: 'bar'
                 });
             });

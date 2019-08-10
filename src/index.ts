@@ -28,7 +28,7 @@ export function esriBootstrap(url?: string, dojoConfig?: { [propName: string]: a
             reject('The ArcGIS API for JavaScript has already been loaded!');
         } else {
             if (!url) {
-                url = 'https://js.arcgis.com/4.5/';
+                url = 'https://js.arcgis.com/4.8/';
             }
 
             if (dojoConfig) {
