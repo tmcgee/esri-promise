@@ -86,7 +86,7 @@ export default () => (
 
         describe('with a custom dojoConfig specified', () => {
             beforeEach(() => {
-                esriBootstrap('https://js.arcgis.com/4.8/', {
+                esriBootstrap('https://js.arcgis.com/4.12/', {
                     foo: 'bar'
                 });
             });

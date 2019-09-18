@@ -68,7 +68,7 @@ function esriBootstrap(url, dojoConfig) {
         }
         else {
             if (!url) {
-                url = 'https://js.arcgis.com/4.9/';
+                url = 'https://js.arcgis.com/4.12/';
             }
             if (dojoConfig) {
                 window['dojoConfig'] = dojoConfig;
